@@ -61,7 +61,7 @@ const apiJobsStatusConstants = {
 const failureViewImg =
   'https://assets.ccbp.in/frontend/react-js/failure-img.png'
 
-class Jobs extends Component {
+class AllJobs extends Component {
   state = {
     profileData: [],
     jobsData: [],
@@ -174,17 +174,10 @@ class Jobs extends Component {
     if (responseSuccess) {
       const {name, profileImageUrl, shortBio} = profileData[0]
       return (
-        <div>
-          <div className="profile-container">
-            <img src={profileImageUrl} className="profile-icon" alt="profile" />
-            <h1 className="profile-name">{name}</h1>
-            <p className="profile-description">{shortBio}</p>
-          </div>
-          <div className="profile-container-lg">
-            <img src={profileImageUrl} className="profile-icon" alt="profile" />
-            <h1 className="profile-name">{name}</h1>
-            <p className="profile-description">{shortBio}</p>
-          </div>
+        <div className="profile-container">
+          <img src={profileImageUrl} className="profile-icon" alt="profile" />
+          <h1 className="profile-name">{name}</h1>
+          <p className="profile-description">{shortBio}</p>
         </div>
       )
     }
@@ -347,24 +340,6 @@ class Jobs extends Component {
         <Header />
         <div className="all-jobs-container">
           <div className="side-bar-container">
-            <div className="search-input-card-sm">
-              <input
-                className="search-input-width"
-                type="search"
-                value={searchInput}
-                placeholder="Search"
-                onChange={this.onGetSearchInput}
-                onKeyDown={this.onEnterSearchInput}
-              />
-              <button
-                testid="searchButton"
-                type="button"
-                className="search-button"
-                onClick={this.onSubmitSearchInput}
-              >
-                <AiOutlineSearch className="search-icon-size" />
-              </button>
-            </div>
             {this.onRenderProfileStatus()}
             <hr className="hr-line" />
             <h1 className="text">Type of Employment</h1>
@@ -374,9 +349,9 @@ class Jobs extends Component {
             {this.onGetRadioButtonsView()}
           </div>
           <div className="jobs-container">
-            <div className="search-input-card">
+            <div>
               <input
-                className="search-input-width"
+                className="search-input"
                 type="search"
                 value={searchInput}
                 placeholder="Search"
@@ -389,7 +364,7 @@ class Jobs extends Component {
                 className="search-button"
                 onClick={this.onSubmitSearchInput}
               >
-                <AiOutlineSearch className="search-icon-size" />
+                <AiOutlineSearch className="search-icon" />
               </button>
             </div>
             {this.onRenderJobsStatus()}
@@ -400,4 +375,4 @@ class Jobs extends Component {
   }
 }
 
-export default Jobs
+export default AllJobs

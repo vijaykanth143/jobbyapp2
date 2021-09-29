@@ -39,7 +39,8 @@ const JobItem = props => {
                 <MdLocationOn className="location-icon" />
                 <p className="location">{location}</p>
               </div>
-              <div className="employment-type-icon-employment-type-container">
+              <div>
+                {' '}
                 <p className="job-type">{employmentType}</p>
               </div>
             </div>

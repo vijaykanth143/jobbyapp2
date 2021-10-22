@@ -26,6 +26,7 @@ class LoginForm extends Component {
   }
 
   onSubmitLoginForm = async event => {
+    console.log(props)
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
